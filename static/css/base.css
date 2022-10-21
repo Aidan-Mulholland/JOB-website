@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-image: url("/static/img/tempbg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(0,0,0,0.8855742980786064) 0%, rgba(255,255,255,0) 100%);
+    padding: 20px;
+    height: 100px;
+}
+
+img{
+    height: 100%;
+}
+
+nav {
+    width: 40%;
+    height: fit-content;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-around;
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
