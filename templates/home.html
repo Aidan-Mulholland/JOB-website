@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
-{% block content %}
-        <p>test</p>
- {% endblock content %}
+    {% block content %}
+        {% load static %}
+            <div class="h-25 d-flex justify-content-around align-items-center pt-5">
+                <img class="shadow w-25 rounded hidden left" src="{% static 'img/The_Life_That_I_Lead.jpg' %}" alt="Album">
+                <iframe class="shadow w-25 rounded hidden right" style="border-radius:12px" src="https://open.spotify.com/embed/track/1t9kT0tGAbsgIKuueV4YDo?utm_source=generator&theme=0" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div> 
+            <div class="h-25 d-flex justify-content-around align-items-center pt-3">
+                <div class="align-text-center hidden left">
+                    <p>The Life That I Lead</p>
+                </div>
+                <div class="align-text-center hidden right">
+                    <p>So I Can Remember</p>
+                </div>  
+            </div> 
+    {% endblock content %}
 
     

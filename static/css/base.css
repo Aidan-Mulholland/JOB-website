@@ -5,60 +5,49 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-#background {
-    background-image: url("/static/img/So_I_Can_Remeber.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: 50% 25%;
-    position: relative;
-}
-
-#content {
-    background-color: rgba(248, 247, 216, 0);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+html {
     height: 100%;
 }
 
-#content :nth-child(){
-    opacity: 1;
+body {
+    background: url("/static/img/So_I_Can_Remeber.jpg") 0 0 no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100%;
+    overflow-x: hidden;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(180deg, rgba(0,0,0,0.8855742980786064) 0%, rgba(255,255,255,0) 100%);
-    padding: 20px;
-    height: 100px;
-}
-
-#logo {
-    height: 100px;
-}
-
-a img{
-    height: 100%;
-}
-
-nav {
-    width: 40%;
-    height: fit-content;
-}
-
-ul {
-    display: flex;
-    list-style: none;
-    width: 100%;
-    justify-content: space-around;
-}
-
-li a, li a:visited, li a:hover {
-    text-decoration: none;
+.wrapper {
+    background: linear-gradient(rgba(255,255,255,0) 0%,rgba(33, 33, 33, 1) 100%);
+    min-height: 100vh;
 }
 
 main {
     padding: 20px;
+    min-height: 100vh;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(2px);
+    transition: all 1s;
+}
+
+.left {
+    transform: translateX(-100%);
+}
+
+.right {
+    transform: translateX(100%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.show:hover {
+    transform: scale(1.05);
+    transition: all 0.2s;
 }
