@@ -2,52 +2,186 @@
     margin: 0;
     padding: 0;
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 400;
 }
 
 html {
-    height: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+a, a:visited {
+    text-decoration: none;
 }
 
 body {
-    background: url("/static/img/So_I_Can_Remeber.jpg") 0 0 no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-color: black;
     min-height: 100%;
     overflow-x: hidden;
 }
 
 .wrapper {
-    background: linear-gradient(rgba(255,255,255,0) 0%,rgba(33, 33, 33, 1) 100%);
+    display: flex;
+    position: relative;
+    flex-direction: column;
     min-height: 100vh;
 }
 
+nav {
+    width: 100%;
+    height: 200px;
+    font-size: 25px;
+    line-height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 1s;
+}
+
+.mobileNav {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    height: 100vh;
+    background-color: black;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 82px 64px 82px 103px;
+    gap: 50px;
+    height: 100%;
+    width: 50%;
+}
+
+.nav-links a{
+    text-transform: uppercase;
+    opacity: 0.8;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover{
+    opacity: 1;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 82px 64px;
+    gap: 30px;
+    height: 100%;
+    width: 50%;
+}
+
+.social-links a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a img{
+    max-width: 52.19px;
+    width: 80%;
+    filter: saturate(0);
+    transition: all 0.3s;
+}
+
+.social-links a img:hover{
+    filter: saturate(1);
+}
+
+#menu {
+    height: 100px;
+    display: none;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+#closeNav {
+    display: none; 
+}
+
 main {
-    padding: 20px;
-    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.songs {
+    max-width: 445px;
+    width: 30vw;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.5));
+    transition: all 0.2s;
+}
+
+.songs:hover{
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 .hidden {
     opacity: 0;
-    filter: blur(2px);
-    transition: all 1s;
-}
-
-.left {
-    transform: translateX(-100%);
-}
-
-.right {
-    transform: translateX(100%);
+    transform: translateY(30%);
+    transition: all ease-out 1s;
 }
 
 .show {
     opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
+    transform: translateY(0%);
 }
 
-.show:hover {
-    transform: scale(1.05);
-    transition: all 0.2s;
+#logo {
+    filter: drop-shadow(0px 4px 10px rgba(255, 255, 255, 1)) invert();
+    max-width: 280px;
+    width: 19vw;
+    cursor: pointer;
+}
+
+#wave {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+}
+
+@media only screen and (max-width: 1050px) {
+    nav {
+        display: none;
+    }
+    #menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #closeNav {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        gap: 5vh;
+    }
+    main {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 10px;
+    }
+    #logo {
+        order: -1;
+        min-width: 100px;
+    }
+    .songs {min-width: 200px;}
+    #id {
+        bottom: 0px;
+    }
 }

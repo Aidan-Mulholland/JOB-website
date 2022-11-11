@@ -5,10 +5,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
         <script defer src="{% static 'js/app.js' %}"></script>
         <title>J.O.B</title>
@@ -16,32 +16,32 @@
     <body>
         <div class="wrapper">
             <header>
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="{% url 'home'  %}">
-                            {% load static %}
-                            <img src="{% static 'img/logo.webp' %}" alt="Logo" width="200">
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link nav-item" href="#">Gig Dates</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link nav-item" href="#">Updates</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link nav-item" href="#">Music & Videos</a>
-                                </li>
-                              </ul>
-                        </div>
-                      </nav>
+                <div id="menu">Menu</div>
+                <nav>
+                    <div class="nav-links">
+                        <div id="closeNav">X</div>
+                        <a href="">Gigs</a>
+                        <a href="">Music</a>
+                        <a href="">Videos</a>
+                        <a href="">Updates</a>
+                    </div>
+                    <div class="social-links">
+                        {% load static %}
+                        <a href="https://open.spotify.com/artist/2JNLj4EdjsByS1lzsbW4ZR?si=7OvrdhE-Q0SEX2bkwZrM7A"><img src="{% static 'img/icons/spotify.png' %}" alt="Spotify"></a>
+                        <a href="https://music.apple.com/gb/artist/j-o-b/1440842587"><img src="{% static 'img/icons/apple.png' %}" alt="Apple"></a>
+                        <a href="https://youtube.com/channel/UC9iz2MzHlnb5Dr019UfScZw"><img src="{% static 'img/icons/youtube.png' %}" alt="Youtube"></a>
+                        <a href="https://instagram.com/thejobband"><img src="{% static 'img/icons/instagram.png' %}" alt="Instagram"></a>
+                        <a href="https://facebook.com/thejobband"><img src="{% static 'img/icons/facebook.png' %}" alt="Facebook"></a>
+                    </div>
+                </nav>
             </header>
-            <main class="d-flex flex-column align-content-center">
-                {% block content %}{% endblock content %}
+            <main class="hidden">
+                {% block content %}
+                {% endblock content %}
             </main>
+            <svg id="wave" width="1920" height="607" viewBox="0 0 1920 607" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M-38 32L44.4583 88.381C126.917 144.762 291.833 257.524 456.75 271.619C621.667 285.714 786.583 201.143 951.5 187.048C1116.42 172.952 1281.33 229.333 1446.25 257.524C1611.17 285.714 1776.08 285.714 1858.54 285.714H1941V624H1858.54C1776.08 624 1611.17 624 1446.25 624C1281.33 624 1116.42 624 951.5 624C786.583 624 621.667 624 456.75 624C291.833 624 126.917 624 44.4583 624H-38V32Z" fill="white" stroke="#FF0000" stroke-width="33"/>
+            </svg>
         </div>
     </body>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
