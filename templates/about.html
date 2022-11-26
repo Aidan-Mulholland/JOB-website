@@ -1,10 +1,35 @@
 {% extends 'base.html' %}
-{% block content %}
-        <h1>About Us</h1>
-
-        <p>Here to take you on an emotional journey, J.O.B are a progressive and alternative rock trio from East London redefining the rock genre,
-            making you cry, headbang, and sing along on the way. The band have recently undergone a small tour of London, released a music video 
-            with over 3k views, and been played and interviewed on national radio shows touted as “going to be stratospheric” - Delux Radio. 
-            They've been actively releasing new music with “The Powers On High” named “a belter” - Phoenix FM with “insane guitar work” - BBC Essex and 
-            new single “So I Can Remember” warranting a live audience member to review that “there is a gap in the british rock scene that these boys are meant to fill”</p>
+    {% load static %}
+    {% block style %}
+        <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    {% endblock style %}
+        
+    {% block content %}
+    <main class="hidden" style="flex-direction: column">
+        <div id="about">
+            <p>Here to take you on an emotional journey, J.O.B are a progressive and alternative rock trio from East London redefining the rock genre,
+                making you cry, headbang, and sing along on the way. The band have recently undergone a small tour of London, released a music video
+                with over 3k views, and been played and interviewed on national radio. 
+                <br>
+                <br>“Going to be stratospheric” - Delux Radio
+                <br>The Powers On High is a belter” - Phoenix FM 
+                <br>“Insane guitar work” - BBC Essex 
+                <br>“There is a gap in the british rock scene that these boys are meant to fill”
+            </p>
+        </div>
+        <svg id="wave" width="1920" height="607" viewBox="0 0 1920 607" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: static">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M-38 32L44.4583 88.381C126.917 144.762 291.833 257.524 456.75 271.619C621.667 285.714 786.583 201.143 951.5 187.048C1116.42 172.952 1281.33 229.333 1446.25 257.524C1611.17 285.714 1776.08 285.714 1858.54 285.714H1941V624H1858.54C1776.08 624 1611.17 624 1446.25 624C1281.33 624 1116.42 624 951.5 624C786.583 624 621.667 624 456.75 624C291.833 624 126.917 624 44.4583 624H-38V32Z" fill="white" stroke-width="33"/>
+        </svg>
+        <section class="posts">
+            <h1>Updates</h1>
+            {% for Post in object_list %}
+                <div>
+                    <h2>{{ Post.date }} - {{ Post.title }}</h2>
+                </div>
+            {% empty %}
+                No updates
+            {% endfor %}
+            </ul>
+        </section>
+    </main> 
  {% endblock content %}
